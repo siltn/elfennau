@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CloudMovement : MonoBehaviour
+public class CloudDeployment : MonoBehaviour
 {
-    [SerializeField] private int moveSpeed; 
+    public GameObject cloud;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,6 +14,8 @@ public class CloudMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = new Vector2(transform.position.x + (moveSpeed * -1 * Time.deltaTime), transform.position.y);
+        GameObject tmpObj = Instantiate(cloud);
+
+        tmpObj.transform.position = new Vector3(10,2,transform.position.z); 
     }
 }
