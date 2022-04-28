@@ -8,7 +8,7 @@ public class TerrainController : MonoBehaviour
     public float speed = 2f;
     public ArrayList objects;
     public GameObject player;
-    public GameObject Rock;
+    public GameObject Particle;
 
     public float offset = 15f;
 
@@ -34,7 +34,7 @@ public class TerrainController : MonoBehaviour
 
     void SpawnRandomBox()
     {
-        GameObject g = Instantiate(Rock);
+        GameObject g = Instantiate(Particle);
         Vector3 playerPos = player.transform.position;
         Vector3 pos = new Vector3(playerPos.x + offset, Random.Range(1, 5), 0);
         g.transform.Translate(pos);
