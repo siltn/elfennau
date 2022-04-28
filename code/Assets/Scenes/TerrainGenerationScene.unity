@@ -550,7 +550,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 933177416}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -673,7 +673,7 @@ PrefabInstance:
       objectReference: {fileID: 933177416}
     - target: {fileID: 3185692419778606759, guid: 2d689e4c5c2fcc44f8cf993d0bf55e3c, type: 3}
       propertyPath: spawnTime
-      value: 2
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 3185692419778606759, guid: 2d689e4c5c2fcc44f8cf993d0bf55e3c, type: 3}
       propertyPath: SpawnObject

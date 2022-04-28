@@ -42,7 +42,7 @@ public class TerrainController : MonoBehaviour
 
     void SpawnRandomObject()
     {
-        switch (objectType)
+        switch (Random.Range(0, 2))
         {
             case 0:
                 spawnIceBot();
