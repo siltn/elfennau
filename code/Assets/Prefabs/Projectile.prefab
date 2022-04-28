@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: 8002382480969518269}
   - component: {fileID: 8002382480969518258}
   - component: {fileID: 8002382480969518259}
+  - component: {fileID: 364899959750928955}
+  - component: {fileID: 7302913778010627254}
   m_Layer: 0
   m_Name: Projectile
   m_TagString: Untagged
@@ -226,4 +228,30 @@ MonoBehaviour:
   _topBoundary: 5
   _bottomBoundary: -5
   _speedLeft: 3
-  baseSpeed: 3
+  baseSpeed: 2
+--- !u!114 &364899959750928955
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8002382480969518256}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3bd824f00c213cb4f859d35b6cc99f3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &7302913778010627254
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8002382480969518256}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8178c7cd3f88bb42816ed16e07b7373, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  terrainController: {fileID: 0}
+  stop: 0

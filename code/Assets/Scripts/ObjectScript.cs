@@ -16,6 +16,8 @@ public class ObjectScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        float movement = speed * Time.deltaTime;
+        transform.Translate(movement);
         if (!started)
         {
             terrainController.GetComponent<TerrainController>().objects.Add(this);

@@ -28,8 +28,6 @@ public class ProjectileController : MonoBehaviour
     void Update()
     {
         timedBoxSpawn();
-        moveObjects();
-        checkObjects();
     }
 
     void SpawnRandomBox()
@@ -46,33 +44,6 @@ public class ProjectileController : MonoBehaviour
     float relativeXPosition(Vector3 v3)
     {
         return player.transform.position.x - v3.x;
-    }
-
-    void moveObjects()
-    {
-        float movement = speed * Time.deltaTime;
-        foreach (ObjectScript obj in objects)
-        {
-            obj.move(new Vector3(-movement, 0, 0));
-        }
-    }
-
-    void checkObjects()
-    {
-        ArrayList dels = new ArrayList();
-        foreach (ObjectScript obj in objects)
-        {
-            if (deletionDistance - obj.gameObject.transform.position.x <= 0)
-            {
-                dels.Add(obj);
-            }
-        }
-
-        foreach (ObjectScript obj in dels)
-        {
-            objects.Remove(obj);
-            Destroy(obj.gameObject);
-        }
     }
 
     void timedBoxSpawn()
