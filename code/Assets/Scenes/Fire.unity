@@ -153,10 +153,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
-  player: {fileID: 1679716910}
-  Rock: {fileID: 8002382480969518256, guid: cdfb4ff6a94e6e448b65492b1740cbf0, type: 3}
+  player: {fileID: 1437661860554369338, guid: 2cf61fb351819394f9ba021eafc5acf8, type: 3}
+  Projectile1: {fileID: 8002382480969518256, guid: cdfb4ff6a94e6e448b65492b1740cbf0, type: 3}
+  Projectile2: {fileID: 6827986992629647030, guid: ba24a4c134fffc94482f8ca820948c75, type: 3}
+  Projectile3: {fileID: 2208866980786825170, guid: 9e9c1641f2150154a9f1ab21ea44d62a, type: 3}
   offset: 15
-  spawnTime: 5
+  spawnTime: 0.5
 --- !u!4 &1203894148
 Transform:
   m_ObjectHideFlags: 0
@@ -254,11 +256,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1679716910 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1437661860554369338, guid: 2cf61fb351819394f9ba021eafc5acf8, type: 3}
-  m_PrefabInstance: {fileID: 1437661860737558491}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1437661860737558491
 PrefabInstance:
   m_ObjectHideFlags: 0
