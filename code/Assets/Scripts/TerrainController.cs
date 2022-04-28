@@ -8,7 +8,8 @@ public class TerrainController : MonoBehaviour
     public float speed = 2f;
     public ArrayList objects;
     public GameObject player;
-    public GameObject Rock;
+    public GameObject SpawnObject;
+    public GameObject SpawnObject2;
 
     public float offset = 15f;
 
@@ -16,31 +17,66 @@ public class TerrainController : MonoBehaviour
     public float spawnTime = 5f;
     private float currentTime;
 
+    private int objectType = 0;
+
     // Start is called before the first frame update
     void Start()
     {
         currentTime = spawnTime;
         objects = new ArrayList();
-        SpawnRandomBox();
+        SpawnRandomObject();
     }
 
     // Update is called once per frame
     void Update()
     {
+
+        speed += Time.deltaTime * 0.25f;
+        if(spawnTime > 1)
+            spawnTime -= Time.deltaTime * 0.0005f;
+        
         timedBoxSpawn();
         moveObjects();
         checkObjects();
     }
 
-    void SpawnRandomBox()
+    void SpawnRandomObject()
     {
-        GameObject g = Instantiate(Rock);
+        switch (objectType)
+        {
+            case 0:
+                spawnIceBot();
+                objectType = 1;
+                break;
+            case 1:
+                spawnIceTop();
+                objectType = 0;
+                break;
+            default:
+                break;
+        }
+        
+
+    }
+
+    void spawnIceTop()
+    {
         Vector3 playerPos = player.transform.position;
-        Vector3 pos = new Vector3(playerPos.x + offset, Random.Range(1, 5), 0);
-        g.transform.Translate(pos);
+        Vector3 pos = new Vector3(playerPos.x + offset, Random.Range(2, 6), 0);
+        GameObject g = Instantiate(SpawnObject);
         g.GetComponent<ObjectScript>().terrainController = this.gameObject;
         objects.Add(g.GetComponent<ObjectScript>());
-        
+        g.transform.Translate(pos);
+    }
+
+    void spawnIceBot()
+    {
+        Vector3 playerPos = player.transform.position;
+        Vector3 pos = new Vector3(playerPos.x + offset, Random.Range(-2, -6), 0);
+        GameObject g = Instantiate(SpawnObject2);
+        g.GetComponent<ObjectScript>().terrainController = this.gameObject;
+        objects.Add(g.GetComponent<ObjectScript>());
+        g.transform.Translate(pos);
     }
 
     float relativeXPosition(Vector3 v3) {
@@ -60,12 +96,8 @@ public class TerrainController : MonoBehaviour
     {
         ArrayList dels = new ArrayList();
         foreach(ObjectScript obj in objects)
-        {
             if(deletionDistance - obj.gameObject.transform.position.x <= 0)
-            {
                 dels.Add(obj);
-            }
-        }
 
         foreach(ObjectScript obj in dels)
         {
@@ -79,7 +111,7 @@ public class TerrainController : MonoBehaviour
         currentTime -= Time.deltaTime;
         if (currentTime <= 0)
         {
-            SpawnRandomBox();
+            SpawnRandomObject();
             currentTime = spawnTime;
         }
     }

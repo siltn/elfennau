@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 164587850}
   - component: {fileID: 164587849}
   m_Layer: 0
-  m_Name: Ground (1)
+  m_Name: Roof
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -208,7 +208,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
-  m_Color: {r: 0, g: 1, b: 0.12942314, a: 1}
+  m_Color: {r: 0, g: 0.06666667, b: 0.5176471, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -269,7 +269,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0.12513345, g: 0.2710809, b: 0.5377358, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -389,7 +389,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
-  m_Color: {r: 0, g: 1, b: 0.12942314, a: 1}
+  m_Color: {r: 0, g: 0.06666667, b: 0.5176471, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -472,7 +472,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70e667205d2adb645a1c3560538bc516, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: {x: 50, y: 50}
+  _leftBoundary: -10
+  _rightBoundary: 10
+  _topBoundary: 5
+  _bottomBoundary: -5
+  baseSpeed: 4
+  inputMethod: 0
 --- !u!212 &933177418
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -597,7 +602,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70e667205d2adb645a1c3560538bc516, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: {x: 50, y: 50}
+  _leftBoundary: -10
+  _rightBoundary: 10
+  _topBoundary: 5
+  _bottomBoundary: -5
+  baseSpeed: 4
+  inputMethod: 0
 --- !u!1001 &3185692421540002725
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -665,5 +675,13 @@ PrefabInstance:
       propertyPath: spawnTime
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 3185692419778606759, guid: 2d689e4c5c2fcc44f8cf993d0bf55e3c, type: 3}
+      propertyPath: SpawnObject
+      value: 
+      objectReference: {fileID: 4885861448067735322, guid: 34f1834b4a159c745981279d8a86eeef, type: 3}
+    - target: {fileID: 3185692419778606759, guid: 2d689e4c5c2fcc44f8cf993d0bf55e3c, type: 3}
+      propertyPath: SpawnObject2
+      value: 
+      objectReference: {fileID: 5632042240504807506, guid: 7cb2a0f1d32c002439f0fa13584df6b8, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2d689e4c5c2fcc44f8cf993d0bf55e3c, type: 3}
